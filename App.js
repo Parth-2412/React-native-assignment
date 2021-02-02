@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View} from 'react-native';
+import { StyleSheet, View, StatusBar} from 'react-native';
 import Tab from "./components/Tab";
 
 export default function App() {
@@ -15,6 +15,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent : 'center',
     backgroundColor: '#fff',
-
+    marginTop : StatusBar.currentHeight
   },
 });

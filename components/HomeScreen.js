@@ -1,18 +1,26 @@
 import React from 'react'
-import { Text,StyleSheet, View} from 'react-native';
+import { Text,StyleSheet, View, ScrollView} from 'react-native';
+import data from "../api/data";
+import Category from "./Category"
 
 function HomeScreen() {
     return (
-        <View style={styles.container}>
-            <Text>Home</Text>
-        </View>
+        <ScrollView>
+            <View style={[styles.container , {marginLeft : 10}]}>
+                {
+                    Object.keys(data).map(category => (
+                        <Category key={category} category={category}/>
+                    ))
+                }
+            </View>
+        </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
       flex : 1,
-      alignItems : 'center',
+      alignItems : 'stretch',
       justifyContent : 'center',
     },
 });
