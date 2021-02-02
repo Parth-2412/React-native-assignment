@@ -7,8 +7,6 @@ import DirectoryScreen from "./DirectoryScreen"
 
 const initialLayout = { width: Dimensions.get('window').width };
 
-const HomeRoute = () => <HomeScreen/>
-const DirectoryRoute = () => <DirectoryScreen/>
 const getTabButtonIconName = (key,focused) => {
     let name;
     switch(key){
@@ -34,8 +32,8 @@ function Tab() {
         },
     ])
     const renderScene = SceneMap({
-        directory : DirectoryRoute,
-        home : HomeRoute 
+        directory : DirectoryScreen,
+        home : HomeScreen 
       });
     return (
         <TabView
