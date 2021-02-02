@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text,StyleSheet, View} from 'react-native';
+import { Text,StyleSheet, View } from 'react-native';
 
 function DirectoryScreen() {
     return (
@@ -12,9 +12,8 @@ function DirectoryScreen() {
 const styles = StyleSheet.create({
     container: {
       flex : 1,
-      justifyContent : 'center',
       alignItems : 'center',
-      backgroundColor: '#fff',
+      justifyContent : 'center'
     },
 });
 
