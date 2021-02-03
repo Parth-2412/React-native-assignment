@@ -73,7 +73,7 @@ function Tab() {
             renderTabBar={props => (
                 <TabBar 
                     {...props} 
-                    indicatorStyle={{ backgroundColor: 'black', height : 5 }}
+                    indicatorStyle={{ backgroundColor: 'black', height : 5, top : 0 }}
                     renderLabel={ ({route , focused}) => (
                         <View style={{alignItems: "center"}}>
                             {getTabButtonIcon(route.key, focused)}
