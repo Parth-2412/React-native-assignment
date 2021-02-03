@@ -28,6 +28,7 @@ const styles = StyleSheet.create(
             flexDirection : "row",
             paddingVertical : 5,
             paddingHorizontal : 20, 
+            marginBottom : 15,
             borderRadius : 50 ,
             shadowColor: "#000",
             shadowOffset: {
