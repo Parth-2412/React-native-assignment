@@ -1,5 +1,5 @@
 import React , { useState, useEffect } from 'react'
-import { Text , Dimensions } from "react-native";
+import { Text ,View,  Dimensions, Image } from "react-native";
 import { Card, Button } from 'react-native-paper';
 import Icon from "react-native-vector-icons/MaterialIcons"
 import AntIcon from "react-native-vector-icons/AntDesign"
@@ -18,9 +18,13 @@ const ServiceCard = ({service , openMap , setLocation}) => {
     } , [])
     return (
             <Card style={{ width : cardWidth , marginTop : 10 , marginHorizontal , elevation : 5}}>
-                <Card.Title title = {""} right={(props) => <Icon {...props} name="info-outline" />} />
-                <Card.Cover source={{ uri: 'https://picsum.photos/200' }} />
+                {/* <Card.Title title = {""} right={(props) => <Icon {...props} name="info-outline" />} /> */}
+                {/* <Card.Cover source={{ uri: 'https://picsum.photos/200' }} /> */}
                 <Card.Content style={{marginTop : 10}}>
+                    <View style={{flexDirection : "row" , justifyContent : "space-between" , marginBottom : 10 }}>
+                        <Image source={{ uri: 'https://picsum.photos/200' }} style={{width : "80%", aspectRatio : 1.33 }} />
+                        <Icon name="info-outline" size={25}/>
+                    </View>
                     <Text style={{fontSize  : 10, color : "grey"}}>
                         Category: {service["Category"]}
                         {"\n"}
