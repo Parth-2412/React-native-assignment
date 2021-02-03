@@ -5,10 +5,14 @@ import Tab from "./components/Tab";
 
 export default function App() {
   const theme = {
-    ...DefaultTheme
+    ...DefaultTheme,
+    colors : {
+      ...DefaultTheme.colors,
+      primary : "white"
+    }
   };
   return (
-    <Provider>
+    <Provider theme={theme}>
       <View style={styles.container}>
         <Tab/>
       </View>
