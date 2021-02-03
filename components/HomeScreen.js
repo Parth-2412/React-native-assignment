@@ -8,13 +8,14 @@ import Map from "./Map";
 
 function HomeScreen() {
     const [visible, setVisible] = useState(false);
+    const [[latitude,longitude] , setLocation] = useState([null, null])
     const showModal = () => setVisible(true);
     const hideModal = () => setVisible(false);
     return (
         <View style={{flex : 1}}>
             <Portal>
-                <Modal style={{ justifyContent : "center" }} visible={visible} onDismiss={hideModal}> 
-                    <Map latitude={18.51957} longitude={73.85535}/>
+                <Modal style={{ justifyContent : "center" }} visible={visible}  onDismiss={hideModal}> 
+                    <Map latitude={latitude} longitude={longitude}/>
                 </Modal>
             </Portal>
             <SearchBar/>
@@ -22,7 +23,7 @@ function HomeScreen() {
                 <View style={[styles.container , {marginLeft : 10}]}>
                     {
                         Object.keys(data).map(category => (
-                            <Category key={category} openMap={showModal} category={category}/>
+                            <Category key={category} setLocation={setLocation} openMap={showModal} category={category}/>
                         ))
                     }
                 </View>

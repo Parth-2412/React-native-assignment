@@ -5,10 +5,9 @@ import Map from "./Map"
 
 function DirectoryScreen() {
     return (
-        // <View style={styles.container}>
-        //     <Text>Directory</Text>
-        // </View>
-        <Map latitude={18.51957} longitude={73.85535}/>
+        <View style={styles.container}>
+            <Text>Directory</Text>
+        </View>
     )
 }
 

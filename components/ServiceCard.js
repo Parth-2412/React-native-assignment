@@ -1,15 +1,21 @@
-import React from 'react'
+import React , { useState, useEffect } from 'react'
 import { Text , Dimensions } from "react-native";
 import { Card, Button } from 'react-native-paper';
 import Icon from "react-native-vector-icons/MaterialIcons"
 import AntIcon from "react-native-vector-icons/AntDesign"
 import { Rating } from "react-native-ratings";
+import locations from "../api/locations";
 
 const { width } = Dimensions.get('window');
 const marginHorizontal = 5;
 const cardWidth = width/2 - 10 - (marginHorizontal * 2);
 
-const ServiceCard = ({service , openMap}) => {
+const ServiceCard = ({service , openMap , setLocation}) => {
+    const [[latitude, longitude] , setLatLng] = useState([null,null])
+    useEffect(() => {
+        const {latitude , longitude}  = locations[service["Name"]];
+        setLatLng([latitude , longitude])
+    } , [])
     return (
             <Card style={{ width : cardWidth , marginTop : 10 , marginHorizontal}}>
                 <Card.Title title = {""} right={(props) => <Icon {...props} name="info-outline" />} />
@@ -30,7 +36,10 @@ const ServiceCard = ({service , openMap}) => {
                     </Text>
                 </Card.Content>
                 <Card.Actions>
-                    <Button uppercase={false} style={{marginLeft : "auto"}} onPress = {openMap}>
+                    <Button uppercase={false} style={{marginLeft : "auto"}} onPress = {() => {
+                        setLocation([latitude,longitude])
+                        openMap()
+                    }}>
                         <Text style={{color : "grey"}}>
                             Book now 
                             <AntIcon name="right"/>
