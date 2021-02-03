@@ -9,7 +9,7 @@ const { width } = Dimensions.get('window');
 const marginHorizontal = 5;
 const cardWidth = width/2 - 10 - (marginHorizontal * 2);
 
-const ServiceCard = ({service}) => {
+const ServiceCard = ({service , openMap}) => {
     return (
             <Card style={{ width : cardWidth , marginTop : 10 , marginHorizontal}}>
                 <Card.Title title = {""} right={(props) => <Icon {...props} name="info-outline" />} />
@@ -30,7 +30,7 @@ const ServiceCard = ({service}) => {
                     </Text>
                 </Card.Content>
                 <Card.Actions>
-                    <Button uppercase={false} style={{marginLeft : "auto"}}>
+                    <Button uppercase={false} style={{marginLeft : "auto"}} onPress = {openMap}>
                         <Text style={{color : "grey"}}>
                             Book now 
                             <AntIcon name="right"/>

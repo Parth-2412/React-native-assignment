@@ -1,12 +1,15 @@
 import React from 'react';
 import { StyleSheet, View, StatusBar} from 'react-native';
+import { Provider } from "react-native-paper";
 import Tab from "./components/Tab";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Tab/>
-    </View>
+    <Provider>
+      <View style={styles.container}>
+        <Tab/>
+      </View>
+    </Provider>
   );
 }
 
