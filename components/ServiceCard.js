@@ -17,7 +17,7 @@ const ServiceCard = ({service , openMap , setLocation}) => {
         setLatLng([latitude , longitude])
     } , [])
     return (
-            <Card style={{ width : cardWidth , marginTop : 10 , marginHorizontal}}>
+            <Card style={{ width : cardWidth , marginTop : 10 , marginHorizontal , elevation : 5}}>
                 <Card.Title title = {""} right={(props) => <Icon {...props} name="info-outline" />} />
                 <Card.Cover source={{ uri: 'https://picsum.photos/200' }} />
                 <Card.Content style={{marginTop : 10}}>
